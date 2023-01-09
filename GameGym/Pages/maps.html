@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+     <link rel="stylesheet" href="{% static 'style/maps.css'%}">
+</head>
+<body>
+<main>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>coct</th>
+                <th>Цена</th>
+                <th>Тип</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ object.id }}</td>
+                    <td>{{ object.Pc.busy }}</td>
+                    <td>{{ object.price }}</td>
+                    <td>{{ object.type }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

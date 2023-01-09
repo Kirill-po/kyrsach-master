@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>GameGym</title>
+    <link rel="stylesheet" href="{% static 'style/Home1.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <nav class="container">
+        <a class = "logo" href="{% url 'home' %}"><img src="{% static 'image/Logo.svg' %}"/></a>
+        <a class = "booking" href="{% url 'bron' %}">Забронировать</a>
+        <a class = "info" href="{% url 'info' %}">Информация</a>
+        <a class = "Net" href="{% url 'map' %}">Карта клуба</a>
+        <a class = "authorization" href="{% url 'login' %}">Авторизоваться</a>
+        <a class = "registration" href="{% url 'signup' %}">Зарегистрироваться</a>
+      </nav>
+    </header>
+    <main>
+      <div class = "container">
+          {% block content %}
+      
+          {% endblock content %}
+      </div>
+    </main>
+    <footer>
+        <ul class="wrapper">
+            <a href="{% url 'connect' %}"><li class="icon VK">
+              <span class="tooltip">Обратная связь</span>
+              <span><i class="fab fa-github"><img src = "{% static 'image/phone.png' %}" width="35" height="30" ></i></span>
+          </li></a>
+          <a href="https://vk.com/giveron_top"><li class="icon VK">
+              <span class="tooltip">VK</span>
+              <span> <i class="fab fa-twitter"><img src = "{% static 'image/vk.png' %}" width="35" height="30" ></i></span>
+          </li></a>
+          <a href="https://www.youtube.com/@BehzodAsliddinov"><li class="icon instagram">
+            <span class="tooltip">YouTube</span>
+            <span><i class="fab fa-instagram"><img src = "{% static 'image/YT.png' %}" width="35" height="30" ></i></span>
+          </li></a>
+          <a href="https://github.com/Kirill-po?tab=repositories"><li class="icon github">
+            <span class="tooltip">Github</span>
+            <span><i class="fab fa-github"><img src = "{% static 'image/GT.png' %}" width="35" height="30" ></i></span>
+          </li></a>
+        </ul>
+    </footer>
+</body>
+</html>
